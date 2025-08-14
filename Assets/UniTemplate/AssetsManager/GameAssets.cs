@@ -40,15 +40,6 @@ namespace UniTemplate.AssetsManager
         /// <param name="activeOnLoad"></param>
         /// <returns></returns>
         AsyncOperationHandle<SceneInstance> LoadSceneAsync(object key, LoadSceneMode loadMode = LoadSceneMode.Single, bool activeOnLoad = true);
-        
-        /// <summary>
-        /// load list assets by label
-        /// </summary>
-        /// <param name="targetScene"></param>
-        /// <param name="label"></param>
-        /// <param name="autoUnload"></param>
-        /// <returns></returns>
-        AsyncOperationHandle<IList<AsyncOperationHandle<Object>>> PreloadByLabelAsync(string targetScene, string label, bool autoUnload = true);
     }
     
     public class GameAssets : IGameAssets
@@ -150,14 +141,16 @@ namespace UniTemplate.AssetsManager
 
         #region Handle Scene
 
+        /// <summary>
+        /// Load scene by key in addressable
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="loadMode"></param>
+        /// <param name="activeOnLoad"></param>
+        /// <returns></returns>
         public AsyncOperationHandle<SceneInstance> LoadSceneAsync(object key, LoadSceneMode loadMode = LoadSceneMode.Single, bool activeOnLoad = true)
         {
-            throw new NotImplementedException();
-        }
-        
-        public AsyncOperationHandle<IList<AsyncOperationHandle<object>>> PreloadByLabelAsync(string targetScene, string label, bool autoUnload = true)
-        {
-            throw new NotImplementedException();
+            return this.InternalLoadAsync(this.loadedScenes, () => Addressables.LoadSceneAsync(key, loadMode, activeOnLoad), key, true, key.ToString());
         }
 
         #endregion
