@@ -1,6 +1,8 @@
 namespace UniTemplate.ScreenFlow.Manager
 {
     using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
     using Cysharp.Threading.Tasks;
     using UniTemplate.ScreenFlow.Base;
     using VContainer.Unity;
@@ -31,6 +33,14 @@ namespace UniTemplate.ScreenFlow.Manager
     
     public class ScreenManager : IScreenManager, ITickable, IInitializable, IDisposable
     {
+        #region Constructor
+
+        private readonly List<IScreenLifecycle>                   activeScreens       = new();
+        private readonly Dictionary<Type, IScreenLifecycle>       typeToLoadScreen    = new();
+        private readonly Dictionary<Type, Task<IScreenLifecycle>> typeToPendingScreen = new();
+
+        #endregion
+        
         public UniTask<TPresenter> OpenScreen<TPresenter>() where TPresenter : IScreenLifecycle
         {
             throw new System.NotImplementedException();
