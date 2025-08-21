@@ -20,6 +20,12 @@ namespace UniTemplate.AssetsManager
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         List<AsyncOperationHandle<T>> PreloadAsync<T>(string targetScene = "", params object[] keys);
+        
+        /// <summary>
+        /// Load all assets in addressable by label
+        /// </summary>
+        /// <param name="label">Label in addressable</param>
+        /// <returns></returns>
         AsyncOperationHandle<List<AsyncOperationHandle<Object>>> LoadAssetsByLabelAsync(string label);
         
         
