@@ -4,8 +4,11 @@ namespace UniTemplate.ScreenFlow.Manager
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Cysharp.Threading.Tasks;
+    using UniTemplate.AssetsManager;
     using UniTemplate.ScreenFlow.Base;
+    using UnityEngine;
     using VContainer.Unity;
+    using Object = System.Object;
 
     public interface IScreenManager
     {
@@ -34,12 +37,51 @@ namespace UniTemplate.ScreenFlow.Manager
     public class ScreenManager : IScreenManager, ITickable, IInitializable, IDisposable
     {
         #region Constructor
+        
+        private readonly IGameAssets gameAssets;
 
+        private ScreenManager(IGameAssets gameAssets)
+        {
+            this.gameAssets = gameAssets;
+        }
+        
+        #endregion
+       
         private readonly List<IScreenLifecycle>                   activeScreens       = new();
         private readonly Dictionary<Type, IScreenLifecycle>       typeToLoadScreen    = new();
         private readonly Dictionary<Type, Task<IScreenLifecycle>> typeToPendingScreen = new();
-
-        #endregion
+        
+        // public async UniTask<T> GetScreen<T>() where T : IScreenLifecycle
+        // {
+        //     var screenType = typeof(T);
+        //
+        //     if (this.typeToLoadedScreenPresenter.TryGetValue (screenType, out var screenPresenter)) return (T)screenPresenter;
+        //
+        //     if (!this.typeToPendingScreen.TryGetValue(screenType, out var loadingTask))
+        //     {
+        //         loadingTask = InstantiateScreen();
+        //         this.typeToPendingScreen.Add(screenType, loadingTask);
+        //     }
+        //
+        //     var result = await loadingTask;
+        //     this.typeToPendingScreen.Remove(screenType);
+        //
+        //     return (T)result;
+        //
+        //     async Task<IScreenLifecycle> InstantiateScreen()
+        //     {
+        //         screenPresenter = this.GetCurrentContainer().Instantiate<T>();
+        //         var screenInfo = screenPresenter.GetCustomAttribute<ScreenInfoAttribute>();
+        //
+        //         var viewObject = Object.Instantiate(await this.gameAssets.LoadAssetAsync<GameObject>(screenInfo.AddressableScreenPath),
+        //             this.CheckPopupIsOverlay(screenPresenter) ? this.CurrentOverlayRoot : this.CurrentRootScreen).GetComponent<IScreenView>();
+        //
+        //         screenPresenter.SetView(viewObject);
+        //         this.typeToLoadedScreenPresenter.Add(screenType, screenPresenter);
+        //
+        //         return (T)screenPresenter;
+        //     }
+        // }
         
         public UniTask<TPresenter> OpenScreen<TPresenter>() where TPresenter : IScreenLifecycle
         {
