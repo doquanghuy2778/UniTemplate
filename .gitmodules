@@ -1,0 +1,3 @@
+[submodule "Packages/AssetsManager"]
+	path = Packages/AssetsManager
+	url = git@github.com:doquanghuy2778/AssetsManager.git
