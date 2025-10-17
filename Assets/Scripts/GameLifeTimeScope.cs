@@ -1,7 +1,6 @@
 namespace UniTemplate.HyperCasual
 {
-    using UniTemplate.AssetsManager;
-    using UniTemplate.ScreenFlow.Manager;
+    using UniTemplate.Scripts;
     using VContainer;
     using VContainer.Unity;
 
@@ -9,8 +8,7 @@ namespace UniTemplate.HyperCasual
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.Register<GameAssets>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<ScreenManager>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterUniTemplateVContainer();
         }
     }
 }
