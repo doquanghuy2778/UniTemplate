@@ -1,6 +1,6 @@
 namespace UniTemplate.HyperCasual
 {
-    using AssetsManager.AssetsManager.Runtime;
+    using UniTemplate.AssetsManager;
     using UniTemplate.ScreenFlow.Manager;
     using VContainer;
     using VContainer.Unity;
