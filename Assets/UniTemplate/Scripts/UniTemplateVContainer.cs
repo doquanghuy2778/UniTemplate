@@ -8,8 +8,8 @@ namespace UniTemplate.Scripts
     {
         public static void RegisterUniTemplateVContainer(this IContainerBuilder builder)
         {
-            builder.Register<GameAssets>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<ScreenManager>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<GameAssets>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
+            builder.Register<ScreenManager>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
         }
     }
 }
