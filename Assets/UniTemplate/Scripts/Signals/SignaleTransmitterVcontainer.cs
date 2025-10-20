@@ -4,7 +4,7 @@
     using UniTemplate.DI;
     using VContainer;
 
-    public static class SignaleTransmitterVcontainer
+    public static class SignalTransmitterVcontainer
     {
         private static readonly MessagePipeOptions MessagePipeOptions = new();
 
