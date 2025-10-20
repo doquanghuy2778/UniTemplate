@@ -1,6 +1,7 @@
 namespace UniTemplate.Scripts
 {
     using UniTemplate.AssetsManager;
+    using UniTemplate.DI;
     using UniTemplate.ScreenFlow.Manager;
     using VContainer;
 
@@ -8,6 +9,7 @@ namespace UniTemplate.Scripts
     {
         public static void RegisterUniTemplateVContainer(this IContainerBuilder builder)
         {
+            builder.Register<VcontainerWrapper>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
             builder.Register<GameAssets>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
             builder.Register<ScreenManager>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
         }
