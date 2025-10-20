@@ -1,9 +1,14 @@
 namespace Bow.Scripts.Scenes.LoadingScene
 {
-    using VContainer.Unity;
+    using UniTemplate.DI;
+    using UniTemplate.HyperCasual.Signals;
+    using UniTemplate.Signals;
+    using VContainer;
 
-    public class LoadingSceneScope : LifetimeScope
+    public class LoadingSceneScope : SceneScope
     {
-
+        protected override void Configure(IContainerBuilder builder)
+        {
+        }
     }
 }
