@@ -2,6 +2,7 @@ namespace UniTemplate.Scripts
 {
     using UniTemplate.AssetsManager;
     using UniTemplate.DI;
+    using UniTemplate.LogServices;
     using UniTemplate.ScreenFlow.Manager;
     using UniTemplate.Signals;
     using VContainer;
@@ -14,6 +15,7 @@ namespace UniTemplate.Scripts
             builder.RegisterSignalBus();
             builder.Register<GameAssets>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
             builder.Register<ScreenManager>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
+            builder.Register<LogServicesManager>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
         }
     }
 }
