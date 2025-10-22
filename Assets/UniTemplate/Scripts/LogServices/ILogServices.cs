@@ -9,5 +9,7 @@
         public void Log(string message);
 
         public void LogException(string message);
+
+        public void LogWarning(string message);
     }
 }

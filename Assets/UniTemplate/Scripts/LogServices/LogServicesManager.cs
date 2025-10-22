@@ -27,5 +27,10 @@
         {
             Debug.LogException(new System.Exception(message));
         }
+
+        public void LogWarning(string message)
+        {
+            Debug.LogWarning(message);
+        }
     }
 }
