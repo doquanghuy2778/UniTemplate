@@ -32,5 +32,12 @@
         {
             Debug.LogWarning(message);
         }
+
+        public void LogWithColor(string message, Color? color = null)
+        {
+            var colorText                = Color.white;
+            if (color != null) colorText = (Color)color;
+            Debug.Log($"<color=#{(byte)(colorText.r * 255f):X2}{(byte)(colorText.g * 255f):X2}{(byte)(colorText.b * 255f):X2}>{message}</color>");
+        }
     }
 }
