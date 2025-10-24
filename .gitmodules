@@ -1,0 +1,3 @@
+[submodule "Assets/GameDevelopmentKit"]
+	path = Assets/GameDevelopmentKit
+	url = git@github.com:doquanghuy2778/GameDevelopmentKit.git
