@@ -1,6 +1,6 @@
-namespace UniTemplate.HyperCasual
+namespace GameFoundationCore.HyperCasual
 {
-    using UniTemplate.Scripts;
+    using GameFoundationCore.Scripts;
     using VContainer;
     using VContainer.Unity;
 
@@ -8,7 +8,7 @@ namespace UniTemplate.HyperCasual
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterUniTemplateVContainer();
+            builder.RegisterGameFoundationCoreVContainer();
         }
     }
 }

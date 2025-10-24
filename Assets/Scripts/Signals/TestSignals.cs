@@ -1,4 +1,4 @@
-﻿namespace UniTemplate.HyperCasual.Signals
+﻿namespace GameFoundationCore.HyperCasual.Signals
 {
     public class TestSignals
     {

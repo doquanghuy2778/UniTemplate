@@ -1,6 +1,6 @@
 namespace Bow.Scripts.Scenes.LoadingScene
 {
-    using UniTemplate.DI;
+    using GameFoundationCore.DI;
     using VContainer;
 
     public class LoadingSceneScope : SceneScope
