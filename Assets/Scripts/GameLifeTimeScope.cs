@@ -1,6 +1,5 @@
 namespace GameFoundationCore.HyperCasual
 {
-    using GameFoundationCore.Scripts;
     using VContainer;
     using VContainer.Unity;
 
@@ -8,7 +7,7 @@ namespace GameFoundationCore.HyperCasual
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterGameFoundationCoreVContainer();
+            
         }
     }
 }
