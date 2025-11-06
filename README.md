@@ -1,5 +1,5 @@
 # UniTemplate
 
-Symple template project Unity
+Simple template project Unity
 
 Have fun!
