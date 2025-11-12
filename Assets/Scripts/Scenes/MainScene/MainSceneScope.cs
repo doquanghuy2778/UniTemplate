@@ -1,6 +1,6 @@
 namespace Bow.Scripts.Scenes.MainScene
 {
-    using UniTemplate.DI;
+    using GameFoundationCore.DI;
     using VContainer;
 
     public class MainSceneScope : SceneScope
