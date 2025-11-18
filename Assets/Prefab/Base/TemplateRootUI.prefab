@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5264782234335722875}
+  - component: {fileID: 4462072952667167193}
   m_Layer: 0
   m_Name: TemplateRootUI
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   - {fileID: 354685961213921539}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4462072952667167193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437257779954664411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d18e75c23b4f77bd919d146d61a7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootUIShowTransform: {fileID: 8878885831007194196}
+  rootUIClosedTransform: {fileID: 7091295581664238240}
+  rootUIOverlayTransform: {fileID: 4628557958869391567}
+  uiCamera: {fileID: 0}
 --- !u!1 &2803835353174448361
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +178,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
