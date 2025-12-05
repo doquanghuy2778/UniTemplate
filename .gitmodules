@@ -1,3 +1,6 @@
 [submodule "Assets/GameDevelopmentKit"]
 	path = Assets/GameDevelopmentKit
 	url = git@github.com:doquanghuy2778/GameDevelopmentKit.git
+[submodule "Assets/CSVDataImporter"]
+	path = Assets/CSVDataImporter
+	url = git@github.com:doquanghuy2778/CSVDataImporter.git
