@@ -20,3 +20,5 @@ The best way to use UniTemplate is to create a new repository based on it:
 + Name your new project and create the repository.
 
 + Clone this new repository to your local machine and open it using Unity Hub (select your desired Unity version) or your preferred IDE.
+
+### Wishing you success !!!
