@@ -1,8 +1,8 @@
 namespace Bow.Scripts.Scenes.LoadingScene
 {
-    using GameDevelopmentKit.GameFoundationCore.Scene;
     using GameFoundationCore.DI;
     using GameFoundationCore.Scripts.Extension;
+    using UniTemplate.Scripts.UI;
     using UnityEngine;
     using VContainer;
 
@@ -11,7 +11,7 @@ namespace Bow.Scripts.Scenes.LoadingScene
         protected override void Configure(IContainerBuilder builder)
         {
             Debug.Log("LoadingSceneScope Configure");
-            builder.InitScreenManually<TemplateLoadingScreenPresenter>();
+            builder.InitScreenManually<LoadingScreenPresenter>();
         }
     }
 }
