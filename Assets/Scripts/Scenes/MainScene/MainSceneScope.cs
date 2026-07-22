@@ -5,7 +5,7 @@ namespace Bow.Scripts.Scenes.MainScene
     using GameFoundationCore.DI;
     using GameFoundationCore.HyperCasual.StateMachine;
     using GameFoundationCore.HyperCasual.StateMachine.Interface;
-    using GameFoundationCore.Scripts.Extension;
+    using GameFoundationCore.Scripts.Utilities.Extension;
     using VContainer;
 
     public class MainSceneScope : SceneScope
