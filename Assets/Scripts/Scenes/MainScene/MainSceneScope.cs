@@ -1,3 +1,5 @@
+using TestAddressable;
+
 namespace Bow.Scripts.Scenes.MainScene
 {
     using System.Linq;
@@ -15,6 +17,7 @@ namespace Bow.Scripts.Scenes.MainScene
             builder.Register<GameStateMachine>(Lifetime.Singleton)
                 .WithParameter(container => typeof(IGameState).GetDerivedTypes().Select(type => (IState)container.Instantiate(type)).ToList())
                 .AsInterfacesAndSelf();
+            builder.Register<TestLoadAssets>(Lifetime.Singleton).AsInterfacesAndSelf();
         }
     }
 }
